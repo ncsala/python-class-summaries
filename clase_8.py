@@ -1,27 +1,34 @@
-# import sys as system
-# from sys import argv as argumentos
+# PASAJE DE ARGUMENTOS POR CONSOLA AL LLAMAR AL ARCHIVO
+# import sys
 
-# print(argumentos)
+# Para importar solo lo que necesito de la libreria
+# from sys import argv
 
-# if len(argumentos[1:]) == 2:
-#     for indice in range(int(argumentos[1])):
-#         print(argumentos[2])
-# else:
-#     print('El primer valor debe ser un entero')
+# Para pasar argumentos por consola al llamar al archivo
+# print(sys.argv)
 
+# print(argv)
 
-# print(input('Ingresar algo: '))
+# for valor in argv[1:]:
+#     print(valor)
 
-# ejercicio - Aprobemos ( 20 min )
-# Crear un script llamado aprobado.py que realice lo siguiente:
+# Se le pasa por consola, por ejemplo, "py clase_8.py 3 Pepe",
+# y repite 3 veces pepe
+# for indice in range(int(argv[1])):
+#         print(indice)
+#         print(argv[2])
 
-# 1. Debe tomar 2 argumentos, ambos números enteros del 0 al 10, sino, mostrar un error.
-# 2. Si ambos valores son mayores o igual a 7 imprimir “Promocionado”
-# 3. Si ambos valores son mayor o igual a 4 imprimir “Aprobado, debe rendir final”
-# 4. Si uno de los dos valores es menor a 4 imprimir “Desaprobado, debe recuperar el primer parcial” 
-# (Si el primer argumento es 3 debe recuperar el primer parcial, si no, debe decir lo mismo pero con segundo parcial)
-# 5. Si ambos argumentos son menores a 4 debe imprimir “Desaprobó ambos parciales, debe recursar”
-# 6. En caso de no mostrar uno o ambos argumentos debe mostrar información de como usar el script.
+'''Ejercicio - Aprobemos ( 20 min )
+Crear un script llamado aprobado.py que realice lo siguiente:
+
+1. Debe tomar 2 argumentos, ambos números enteros del 0 al 10, sino, mostrar un error.
+2. Si ambos valores son mayores o igual a 7 imprimir “Promocionado”
+3. Si ambos valores son mayor o igual a 4 imprimir “Aprobado, debe rendir final”
+4. Si uno de los dos valores es menor a 4 imprimir “Desaprobado, debe recuperar el primer parcial”
+(Si el primer argumento es 3 debe recuperar el primer parcial, si no, debe decir lo mismo pero con segundo parcial)
+5. Si ambos argumentos son menores a 4 debe imprimir “Desaprobó ambos parciales, debe recursar”
+6. En caso de no mostrar uno o ambos argumentos debe mostrar información de como usar el script.'''
+
 # import sys
 
 # argumentos = sys.argv[1:]
@@ -40,39 +47,46 @@
 #             if int(argumentos[0]) == 3:
 #                 print('Desaprobado, debe recuperar el primer parcial')
 #             else:
-#                 print('Desaprobado, debe recuperar el segundo se parcial')
+#                 print('Desaprobado, debe recuperar el segundo parcial')
 #     else:
 #         print('No son valores posibles')
 # else:
-#     print('''Ademas del archivo a llamar agregue los valores 
+#     print('''Ademas del archivo a llamar agregue los valores
 # de los parciales separados por espacios de la siguiente manera:
 # py <nombre del archivo> <primer valor> <segundo valor>''')
 
+# -----------------------------------------------------------------------
+# Segunda parte de la clase
 
-# break
-
-a = 'Una cadena'
-b = 'Otra cadena'
+a = 'Esta es la primer cadena'
+b = 'Esta es la segunda cadena'
 
 # print(a, 'algo', b)
 
-# printf-style
-# cadena = '%i algo' % a
+# PRINTF-STYLE
+# cadena = '%s algo' % a
 # print(cadena)
 
-# format
-
-# cadena = '{segundo_valor} algo {primer_valor}'.format(primer_valor=b, segundo_valor=a)
+# FORMAT
+# Se le pueden pasar índices
+# cadena = '{} | EL MEDIO | {}'.format(a, b)
 # print(cadena)
 
+# # Se le pueden pasar indices
+# cadena = '{1} | EL MEDIO | {0}'.format(a, b)
+# print(cadena)
+
+# # Tambien de esta forma
+# cadena = '{segundo_valor} | EL MEDIO | {primer_valor}'.format(primer_valor=b, segundo_valor=a)
+# print(cadena)
+
+# Similar a la anterior pero sin escribir format
 # print(f'{a} algo {5}')
 
-# mini-lenguaje
-
-# cadena = f'{a:<20}'
-# print(cadena)
-
-# cadena = f'{a:>20}'
+# MINI LENGUAJE
+# Se pueden hacer cosas locas, por ejemplo
+# Imprimir 200 espacios hacía la derecha la cadena
+# cadena = f'{a:>200}'
 # print(cadena)
 
 # cadena = f'{a:^20}'
@@ -81,26 +95,30 @@ b = 'Otra cadena'
 # cadena = f'{a:^20.3}'
 # print(cadena)
 
+# Binario, hexadecimal, octal etc.
 # cadena = f'{25:b}'
 # cadena = f'{25:c}'
 # cadena = f'{25:d}'
 # cadena = f'{25:o}'
-# cadena = f'{12:x}'
+# cadena = f'{12:x}' 
 # cadena = f'{12:X}'
 # cadena = f'{12123.3123:n}'
 # print(cadena)
 
-# ejercicio - Desafío de Salida ( 10 min )
-# Formatea los siguientes valores para mostrar el resultado indicado:
+'''Ejercicio de clase - Desafío de Salida
+Formatea los siguientes valores para mostrar el resultado indicado:
+
+1. "Hola Mundo" → Alineado a la izquierda en 30 caracteres
+2. "Hola Mundo" → Truncamiento en el sexto carácter (índice 5)
+3. "Hola Mundo" → Alineamiento al centro en 10 caracteres con truncamiento en el tercer carácter (índice 2)
+4. 231875 → Formateo a hexadecimal en minúsculas
+5. 7887 → Formateo a binario
+'''
 
 # texto = 'Hola Mundo'
-# 1. "Hola Mundo" → Alineado a la izquierda en 30 caracteres
+
 # print(f'{texto:<30}')
-# 2. "Hola Mundo" → Truncamiento en el sexto carácter (índice 5)
 # print('{:.5}'.format('Hola Mundo'))
-# 3. "Hola Mundo" → Alineamiento al centro en 10 caracteres con truncamiento en el tercer carácter (índice 2)
 # print('{:^10.2}'.format(texto))
-# 4. 231875 → Formateo a hexadecimal en minúsculas
 # print('{0:x}'.format(231875))
-# 5. 7887 → Formateo a binario
 # print('{numero:b}'.format(numero=7887))
