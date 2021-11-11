@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantillas</title>
+</head>
+<body>
+    Probando las plantillas!
+
+    <br>
+
+    {{nombre}} {{apellido}}
+
+    <br>
+    
+    {{mi_dict.key}} 
+
+    <br>
+
+    {{lista}}
+
+    <br>
+
+    {% for valor in lista %}
+    {% comment %} problema del if {% endcomment %}
+        {% if valor < 3%}
+            {{valor}}
+            hola
+            <br>
+        {% elif valor == 3%}
+            paso por el elif
+            <br>
+        {% else %}
+            paso por el else
+            <br>
+        {% endif %}
+    {% endfor %}
+
+</body>
+</html>
