@@ -33,6 +33,7 @@ def probandoTemplate(self):
     
     mis_datos = {'nombre': nombre, 'apellido': apellido, 'mi_dict': mi_dict, 'lista': [1,2,3,4,5,6]}
     
+    #LA FORMA ANTERIOR DE HACERLO ---------------------------------------------------------
     # # otra forma de render - otra forma de manejar archivo
     # miHtml = open("C:\Source Code\Clase17\Clase17\plantillas\prueba.html")
 
@@ -41,19 +42,16 @@ def probandoTemplate(self):
 
     # miHtml.close() #Cerramos el archivo
 
-    # miContexto = Context(mis_datos) #EN este caso no hay nada ya que no hay parametros, IGUAL hay que crearlo
+    # miContexto = Context(mis_datos) #aunq no se le pase nada igual hay que crearlo
 
     # documento = plantilla.render(miContexto) #Aca renderizamos la plantilla en documento
+    #--------------------------------------------------------------------------------------
     
+    #FORMA NUEVA DE HACERLO ------------------------
     plantilla = loader.get_template('prueba.html')
 
     documento = plantilla.render(mis_datos)
+    #----------------------------------------------
 
     return HttpResponse(documento)
 
-# Pasaje de datos a los templates
-# bucles y condicionales
-# cargadores
-# modelos
-# proyecto vs app
-# nuevo proyecto/con app y demas
