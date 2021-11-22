@@ -1,8 +1,15 @@
-{% extends 'AppCoder/index.html'% }
+{% extends 'AppCoder/index.html' %}
 
+{% block 'article' %}
 
-{{% block 'Section' %}
-    <section class="link1">
-        Bienvenidos a link1
-    </section>
-{% endblock 'Section' %}
+    <article class="link1">
+
+            <h1 style="text-align:center">BIENVENIDOS A TEMPLATE UNO</h1>
+            
+    </article>
+
+    {% block 'bloquelink1' %}
+    
+    {% endblock 'bloquelink1' %}
+
+{% endblock 'article'%}

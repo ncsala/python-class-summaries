@@ -22,7 +22,7 @@ def ver_curso(request):
     
     return HttpResponse(f'{texto}')
 
-def prueba_templates(request):
+def index(request):
     # una forma de cargar el template
     # template = loader.get_template('AppCoder/index.html')
     # documento = template.render({})
